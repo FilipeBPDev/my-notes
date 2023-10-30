@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/pages/Home/Home';
+import Notas from './components/pages/Notas/Notas';
+import NovaNota from './components/pages/NovaNota/NovaNota';
+import Container from './components/layout/Container/Container';
+import NavBar from './components/layout/NavBar/NavBar';
+import TaskList from './components/pages/TaskList/TaskList';
+import Footer from './components/layout/Footer/Footer';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar/>
+      <Container customClass="minHeight">
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='/anotações' element={<Notas />} />
+          <Route exact path='/novanota' element={<NovaNota />} />
+          <Route exact path='/tasklist' element={<TaskList />} />
+        </Routes>
+
+      </Container>
+
+      <Footer/>
+    </Router>
   );
 }
 
