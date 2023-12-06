@@ -12,12 +12,14 @@ function Home() {
             span="My Notes"
             txt1="✨ Crie sua primeira anotação."
             btnTxt="Criar nota"
+            btn="novanota/"
             />
             <Content
             title="Explore suas "
             span=" ideias"
             txt1="🗃️ Explore nossas opções de organização."
             btnTxt="Explore"
+            btn="notas/"
 
             />
             

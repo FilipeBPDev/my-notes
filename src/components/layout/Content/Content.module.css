@@ -1,37 +1,7 @@
-.containerDiv {
-    display: flex;
-    width: 47%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #5390D9;
-    border-radius: 5px;
-    padding: 3em;
-    box-shadow: 0 0 10px #fff;
-    background: #11161cd0;
 
-}
-
-.header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.containerDiv div {
-    width: 100%;
-    display: inline-block;
-
-}
-
-.containerDiv h1 {
-   font-size: 2.0em;
-   margin-top: 0px;
-   text-align: center;
-}
 
 .content {
-    height: 100%;
+    height: 90px;
 
 }
 
@@ -48,3 +18,24 @@
    width: 350px;
    margin: 2em 0;
 }
+
+.projectCard {
+    display: flex;
+    width: 47%;
+    min-height: 200px !important; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #5390D9;
+    border-radius: 5px;
+    padding: 3em;
+    box-shadow: 0 0 10px #fff;
+    background: #11161cd0;
+}
+
+.projectCard h1 {
+    font-size: 2.0em;
+    margin: 0 auto;
+    text-align: center;
+    border: #5390D9;
+ }

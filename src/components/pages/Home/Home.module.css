@@ -1,3 +1,9 @@
+.divTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .homeContainer {
     width: 100%;
     display: flex;
@@ -8,18 +14,6 @@
     padding: 3em;
 }
 
-.containerDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #5390D9;
-    border-radius: 5px;
-    padding: 3em;
-    box-shadow: 0 0 10px #fff;
-    background: #11161cd0;
-
-}
 
 .containerDiv div {
     width: 100%;

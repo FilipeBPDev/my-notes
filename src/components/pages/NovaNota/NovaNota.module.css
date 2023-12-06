@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: 5px;
+    background-color: #11161cfa;
+    width: 65%;
+    height: 570px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px #fff;
+    background: #11161cd0;
+}
+
+
+.container div {
+    gap: 10px;
+    width: 100%;
+}
+
+.container form {
+    margin-top: 15px;
+}
+
+.title {
+    width: 100%;
+}
+

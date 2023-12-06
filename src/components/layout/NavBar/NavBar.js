@@ -17,8 +17,8 @@ function NavBar() {
                 </Link>
                 <ul>
                     <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/anotações'>Anotações</Link></li>
                     <li><Link to='/novanota'>Criar Nota</Link></li>
+                    <li><Link to='/notas'>Anotações</Link></li>
                     <li><Link to='/tasklist'>Task List</Link></li>
                 </ul>
             </Container>
