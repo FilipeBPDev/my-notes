@@ -3,6 +3,7 @@ import Content from '../../layout/Content/Content';
 import styles from '../Home/Home.module.css';
 import axios from 'axios';
 
+
 function Notas() {
     const [projects, setProjects] = useState([]);
 
@@ -14,7 +15,7 @@ function Notas() {
             .catch(err => console.log(err))
     }, []);
 
-
+    
     return (
         <div>
             <div className={styles.divTitle}>
@@ -31,7 +32,10 @@ function Notas() {
                         txt1={project.description}
                         btn="notas/"
                         btnTxt="Abrir"
+                        showDelBtn="Excluir"
+
                     />
+
                 ))}
             </div>
         </div>

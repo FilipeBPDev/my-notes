@@ -39,3 +39,11 @@
     text-align: center;
     border: #5390D9;
  }
+
+ .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+ }
