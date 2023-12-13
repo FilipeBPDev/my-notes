@@ -8,7 +8,7 @@ function Content({ id, title, span, txt1, showDelBtn, onDel, btnTxt, btn }) {
 
     const limitDescription = txt1 && txt1.length > caracterLimit ? txt1.slice(0, caracterLimit) + "..." : txt1;
 
-    
+
 
 
     return (
@@ -29,6 +29,7 @@ function Content({ id, title, span, txt1, showDelBtn, onDel, btnTxt, btn }) {
                     </Button>}
                 {showDelBtn && (
                     <Button
+                        handleSubmit={onDel}
                         text="Excluir" />
                 )}
             </div>

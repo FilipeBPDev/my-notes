@@ -9,12 +9,7 @@
                     to={to}>
                     {text}
                 </Link>
-
             </div>
-
-
-
-
 
         )
     }

@@ -14,8 +14,19 @@ function Notas() {
             })
             .catch(err => console.log(err))
     }, []);
+   
+    const handleDelete = async (id) => {
+        try {
+            const resp = await axios.delete(`http://localhost:7007/notes/${id}`)
+            if (resp.status === 200) {
+               setProjects(prevProjects => prevProjects.filter(project => project.id !== id))
+            }
+        }
+        catch (error) {
+            console.error('Erro ao excluir nota', error.message)
+        }
+    };
 
-    
     return (
         <div>
             <div className={styles.divTitle}>
@@ -30,9 +41,11 @@ function Notas() {
                         id={project.id}
                         span={project.title}
                         txt1={project.description}
+                        onDel={() => handleDelete(project.id)}
                         btn="notas/"
                         btnTxt="Abrir"
                         showDelBtn="Excluir"
+
 
                     />
 
