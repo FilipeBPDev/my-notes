@@ -1,33 +1,48 @@
 import { useState, useEffect } from 'react';
 import styles from './Message.module.css';
+import Button from '../Button/Button';
 
-function Message({ type, msg }) {
+function Message({ type, msg, onConfirm, onCancel, title }) {
     const [visible, setVisible] = useState(false);
     useEffect(() => {
 
-        if(!msg) {
+        if (!msg) {
             setVisible(false)
             return
         }
         setVisible(true)
-        const timer = setTimeout(() => {
-            setVisible(false)
-        }, 3000)
 
-        return ()  => clearTimeout(timer)
+        if (type !== 'confirmation') {
+            const timer = setTimeout(() => {
+                setVisible(false)
+            }, 3000)
 
-    }, [msg])
+            return () => clearTimeout(timer)
+        }
+    }, [msg, onCancel, type])
 
-
-
-            //o fragments </> ajuda a executar um teste if, se visible for true, ele cria e exibe a div
     return (
-        <> 
+        <div className={styles.overlay}>
             {visible && (
-                <div className={`${styles.message} ${styles[type]}`} >{msg}</div>
+                <div className={`${styles.message} ${styles[type]}`}>
+                    {msg} <span>"{title}"</span> ?
+                    {type === 'confirmation' && (
+                        <div className={styles.divBtn}>
+                            <Button
+                                text="Sim, excluir"
+                                handleSubmit={onConfirm}
+                            />
+                            <Button
+                                text="Cancelar"
+                                handleSubmit={onCancel}
+                            />
+                        </div>
+                    )}
+
+                </div>
 
             )}
-        </>
+        </div>
     )
 }
 
