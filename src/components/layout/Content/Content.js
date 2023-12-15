@@ -1,6 +1,6 @@
 import styles from './Content.module.css';
 import Button from '../../layout/Button/Button';
-import axios from 'axios';
+
 
 function Content({ id, title, span, txt1, showDelBtn, onDel, btnTxt, btn }) {
     const btnTo = id ? `${btn}${id}` : btn

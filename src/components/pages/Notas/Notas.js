@@ -23,10 +23,9 @@ function Notas() {
             setConfirmation(id)
             setConfTilte(title)
         } catch (error) {
-            console.log('Erro ao excluir nota', error.message)
+            console.error('Erro ao excluir nota', error.message)
         }
     }
-
 
     const handleConfirmDelete = async () => {
         try {
@@ -54,7 +53,6 @@ function Notas() {
                 <h1>Suas anotações.</h1>
             </div>
 
-
             <div className={styles.homeContainer}>
                 {projects.map(project => (
                     <Content
@@ -67,14 +65,13 @@ function Notas() {
                         btnTxt="Abrir"
                         showDelBtn="Excluir"
                     />
-
                 ))}
             </div>
 
             {confirmation && (
                 <Message
                     type="confirmation"
-                    msg={`Tem certeza que deseja excluir a nota `}
+                    msg={"Tem certeza que deseja excluir esta nota? "}
                     title={`${confTitle}`}
                     onConfirm={handleConfirmDelete}
                     onCancel={handleCancelDelete}

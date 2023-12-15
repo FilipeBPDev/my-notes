@@ -1,5 +1,4 @@
 .overlay {
-    
     position: fixed;
     top: 0;
     left: 0;
@@ -9,22 +8,17 @@
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.5);
-    /* Fundo escuro com 50% de opacidade */
     z-index: 1000;
-    /* Z-index alto para garantir que fique sobreposto a outros elementos */
-
 }
 
 .message {
-
     border: 2px solid #000;
     color: #000;
-    background-color: #d1d1d1;
+    background-color: #a0a8eb;
     width: 40%;
     padding: 1em;
-    margin: 0 auto;
+    margin: 20em;
     text-align: center;
-    margin-bottom: 2em;
     border-radius: 5px;
 }
 
@@ -32,6 +26,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 1em;
 }
 
 span {
@@ -41,13 +36,13 @@ span {
 .sucess {
     color: #155724;
     background-color: #d4edda;
-    border-color: #c3e6cb
+    border-color: #c3e6cb;
 }
 
 .error {
     color: #721c24;
     background-color: #f8d7da;
-    border-color: #f5c6cb;
+    border-color: #f5c2c6;
 }
 
 .title {

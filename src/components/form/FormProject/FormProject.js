@@ -5,24 +5,42 @@ import Input from "../Input/Input";
 import TextArea from "../TextArea/TextArea";
 
 import styles from "./FormProject.module.css";
+import Message from "../../layout/Message/Message";
 
-function FormProject({ btnText, handleSubmit, projectData }) {
+function FormProject({ btnText }) {
     const [title, setTitle] = useState("")
     const [descrip, setDescrip] = useState("")
-    const [project, setProject] = useState(projectData || [])
+    const [message, setMessage] = useState(false)
+    const [typeMessage, setTypeMessage] = useState("")
+    const [textMsg, setTextMsg] = useState("")
 
     const submit = async (e) => {
         e.preventDefault();
+
+        if (!title || !descrip) {
+            setMessage(true)
+            setTypeMessage("error")
+            setTextMsg("Erro ao adicionar nota")
+        }
+
         try {
-            const response = await axios.post('http://localhost:7007/notes', {
+            await axios.post('http://localhost:7007/notes', {
                 title: title,
                 description: descrip,
-            });
-            console.log(response.data)
+            })
+            setMessage(true)
+            setTypeMessage("sucess")
+            setTextMsg("Nota inserida com sucesso")
             setTitle('')
             setDescrip('')
         } catch (error) {
             console.error('Erro ao adicionar nota', error.message)
+        } finally {
+            setTimeout(() => {
+                setMessage(false)
+                setTypeMessage("")
+                setTextMsg("")
+            }, 1500)
         }
     }
 
@@ -34,7 +52,6 @@ function FormProject({ btnText, handleSubmit, projectData }) {
         setDescrip(e.target.value)
     }
 
-
     return (
         <form onSubmit={submit} className={styles.containerForm}>
 
@@ -45,7 +62,6 @@ function FormProject({ btnText, handleSubmit, projectData }) {
                 placeholder="Insira o título da nota."
                 handleOnChange={handleTitle}
                 value={title}
-
             />
             <TextArea
                 type="Descrição"
@@ -54,14 +70,18 @@ function FormProject({ btnText, handleSubmit, projectData }) {
                 value={descrip}
             />
             <Button
-                clss='btnNewNote'
+                clss="btnNewNote"
                 handleSubmit={submit}
                 text={btnText}
             />
+            {message && (
+                <Message
+                    type={typeMessage}
+                    msg={textMsg}
+                />
+            )}
         </form>
     )
 }
-
-
 
 export default FormProject;

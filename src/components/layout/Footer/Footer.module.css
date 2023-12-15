@@ -1,5 +1,4 @@
 .footer {
-
     color: #fff;
     padding: 3em;
     text-align: center;
@@ -11,12 +10,12 @@
     list-style-type: none;
 }
 
-.socialList li {
+.socialList a {
     margin: 0 1em;
     
 }
 
-.socialList li:hover {
+.socialList a:hover {
     color: #5390D9;
 
 }
@@ -26,6 +25,7 @@
     cursor: pointer;
     transition: 0.2s;
     transition: transform 0.2s ease-in-out;
+    color: #5390D9;
 }
 
 .socialList svg:hover {
